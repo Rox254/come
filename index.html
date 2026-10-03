@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gourmet Haven - Fine Dining & Culinary Art</title>
+    <style>
+        /* Global Styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #fdfaf6;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* Navigation Bar */
+        navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #1a1a1a;
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            color: #e67e22;
+            font-size: 1.5rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .nav-links a {
+            color: #ffffff;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #e67e22;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+                        url('watermarked_img_16410467445327242366.jpg') center/cover no-repeat;
+            height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: #fff;
+            padding: 0 20px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            background-color: #e67e22;
+            color: #fff;
+            padding: 10px 25px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #d35400;
+        }
+
+        /* Container & Section Layouts */
+        .container {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 30px;
+            color: #1a1a1a;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 3px;
+            background-color: #e67e22;
+            margin: 10px auto 0;
+        }
+
+        /* Recipe / Highlight Section */
+        .recipe-card {
+            background: #ffffff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            margin-bottom: 50px;
+        }
+
+        .recipe-card img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .recipe-content {
+            padding: 30px;
+            text-align: center;
+        }
+
+        /* Menu Grid */
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 50px;
+        }
+
+        .menu-item {
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+        }
+
+        .menu-item-info h3 {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+
+        .menu-item-info p {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .menu-price {
+            font-weight: bold;
+            color: #e67e22;
+            font-size: 1.1rem;
+        }
+
+        /* Reservation Form */
+        .reservation-form {
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            max-width: 600px;
+            margin: 0 auto 50px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+
+        .form-group input, 
+        .form-group select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1a1a1a;
+            color: #ffffff;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <navbar>
+        <div class="logo">Gourmet Haven</div>
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#recipes">Recipes</a></li>
+            <li><a href="#menu">Menu</a></li>
+            <li><a href="#reserve">Reserve</a></li>
+        </ul>
+    </navbar>
+
+    <!-- Hero Header -->
+    <header class="hero" id="about">
+        <h1>Welcome to Gourmet Haven</h1>
+        <p>Fresh ingredients, timeless passion, and unforgettable flavors.</p>
+        <a href="#reserve" class="btn">Book a Table</a>
+    </header>
+
+    <div class="container">
+
+        <!-- Recipe Highlight Section -->
+        <section id="recipes">
+            <h2 class="section-title">Our Culinary Heritage</h2>
+            <div class="recipe-card">
+                <img src="watermarked_img_16410467445327242366.jpg" alt="Open recipe book with fresh ingredients">
+                <div class="recipe-content">
+                    <h3>Secret Recipes & Handpicked Ingredients</h3>
+                    <p>Every dish on our menu is crafted using traditional techniques and locally sourced organic ingredients to deliver an authentic culinary experience.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Restaurant Menu Section -->
+        <section id="menu">
+            <h2 class="section-title">Our Popular Menu</h2>
+            <div class="menu-grid">
+                <div class="menu-item">
+                    <div class="menu-item-info">
+                        <h3>Mediterranean Lemon Chicken</h3>
+                        <p>Grilled chicken breast marinated in herbs, lemon, and olive oil.</p>
+                    </div>
+                    <span class="menu-price">$18.50</span>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item-info">
+                        <h3>Classic Bolognese</h3>
+                        <p>Slow-cooked beef ragu served over fresh tagliatelle pasta.</p>
+                    </div>
+                    <span class="menu-price">$16.00</span>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item-info">
+                        <h3>Roasted Garden Vegetables</h3>
+                        <p>Seasonal vegetables roasted with rosemary and garlic.</p>
+                    </div>
+                    <span class="menu-price">$12.50</span>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item-info">
+                        <h3>Seafood Risotto</h3>
+                        <p>Arborio rice cooked with fresh shrimp, mussels, and white wine.</p>
+                    </div>
+                    <span class="menu-price">$22.00</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Reservation Form Section -->
+        <section id="reserve">
+            <h2 class="section-title">Reserve a Table</h2>
+            <form class="reservation-form">
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" required placeholder="John Doe">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" required placeholder="john@example.com">
+                </div>
+                <div class="form-group">
+                    <label for="guests">Number of Guests</label>
+                    <select id="guests">
+                        <option value="1">1 Person</option>
+                        <option value="2">2 People</option>
+                        <option value="4">4 People</option>
+                        <option value="6">6+ People</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="date">Date</label>
+                    <input type="date" id="date" required>
+                </div>
+                <button type="submit" class="btn" style="width: 100%;">Confirm Booking</button>
+            </form>
+        </section>
+
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Gourmet Haven Restaurant. All rights reserved.</p>
+        <p>123 Culinary Street | Contact: +1 (555) 019-2834</p>
+    </footer>
+
+</body>
+</html>
